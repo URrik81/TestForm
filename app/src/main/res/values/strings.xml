@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Start Page</string>
+    <string name="second_fragment_label">List of stored tests</string>
+    <string name="third_fragment_label">Create new test</string>
+    <string name="fourth_fragment_label">Run test</string>
+    <string name="create_test">Create Test</string>
+    <string name="run_test">Run Test</string>
+    <string name="sign_in">Sign In</string>
+    <string name="back_to_list">Back to list</string>
+    <string name="back_to_start">Back</string>
+    <string name="save_link">Save Link</string>
+    <string name="open_form">Open Form</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_test_name_hint">Enter test name</string>
+
+</resources>

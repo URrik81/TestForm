@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".TestListFragment"
+    android:weightSum="1">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/link_list"
+        android:layout_margin="@dimen/button_margin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"/>
+
+    <Button
+        android:id="@+id/back_to_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back_to_start"
+        android:layout_margin="@dimen/button_margin"
+        android:layout_weight="0.1"
+        />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
