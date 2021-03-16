@@ -7,7 +7,7 @@
         android:id="@+id/test_web_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/button_margin"
+        android:layout_margin="@dimen/webview_margin"
         android:layout_weight="0.9"/>
 
     <Button

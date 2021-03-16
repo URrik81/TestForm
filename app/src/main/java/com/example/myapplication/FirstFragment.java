@@ -78,7 +78,7 @@ public class FirstFragment extends Fragment {
             Bundle bundle = new Bundle();
             bundle.putString(MainActivity.TEST_LINK_KEY, openLink);
             NavHostFragment.findNavController(FirstFragment.this)
-                    .navigate(R.id.action_FirstFragment_to_EnterNameDialog, bundle);
+                    .navigate(R.id.action_FirstFragment_to_FourthFragment, bundle);
         }
     }
 
