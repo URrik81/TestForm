@@ -79,6 +79,8 @@ public class SaveLinkFragment extends Fragment {
                             .putStringSet(MainActivity.TEST_NAME_KEY, testNameSet)
                             .putStringSet(MainActivity.TEST_LINK_KEY, testLinkSet)
                             .apply();
+                    storedLink = "";
+                    clipboard.setPrimaryClip(ClipData.newPlainText("", ""));
                 }
                 NavHostFragment.findNavController(SaveLinkFragment.this)
                         .navigate(R.id.action_ThirdFragment_to_SecondFragment);
@@ -117,7 +119,8 @@ public class SaveLinkFragment extends Fragment {
                 Log.d(TAG, "onFocusChange() hasFocus : " + hasFocus);
                 if (hasFocus) {
                     restoreLinkFromClipBoard();
-                    saveTest.setEnabled(storedLink != null && !storedLink.isEmpty());
+                    saveTest.setEnabled(storedLink != null && !storedLink.isEmpty()
+                            && testName != null && testName.getText().length() > 0);
                 }
             }
         });
@@ -128,7 +131,8 @@ public class SaveLinkFragment extends Fragment {
         super.onResume();
         Log.d(TAG, "onResume()");
         restoreLinkFromClipBoard();
-        saveTest.setEnabled(storedLink != null && !storedLink.isEmpty());
+        saveTest.setEnabled(storedLink != null && !storedLink.isEmpty()
+                && testName != null && testName.getText().length() > 0);
     }
 
     @Override
@@ -142,6 +146,8 @@ public class SaveLinkFragment extends Fragment {
         super.onDestroyView();
         Log.d(TAG, "onDestroyView()");
         clipboard.removePrimaryClipChangedListener(clipChangedListener);
+        storedLink = "";
+        clipboard.setPrimaryClip(ClipData.newPlainText("", ""));
     }
 
     private void restoreLinkFromClipBoard() {
@@ -167,6 +173,8 @@ public class SaveLinkFragment extends Fragment {
             } else {
                 storedLink = "";
             }
+            saveTest.setEnabled(!storedLink.isEmpty()
+                    && testName != null && testName.getText().length() > 0);
         }
     }
 }
